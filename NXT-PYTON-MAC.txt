@@ -1,0 +1,33 @@
+I installed NXT python on mac 10.8.1. 
+
+NXT-Python's installation instructions are found here:
+http://code.google.com/p/nxt-python/wiki/Installation
+
+NXT-Python requires either Bluetooth or USB to communicate with NXT.
+I installed PyUSB-1.0.0a3
+There are a number of ways to install PyUSB.
+
+sudo easy_install pyusb
+or 
+sudo easy_install pip
+sudo pip install pyusb 
+
+Would have been the easier choices.
+I downloaded pyusb-1.0.0a3 and installed with
+sudo python setup.py install
+
+At this point, you should be done. 
+BUT YOUR NOT.
+The error I recieved was "No backend available"
+
+I then installed the LEGO Fantom Driver, and Pyfantom.
+And still, it didn't work. After searching mailing lists:
+The fix was to install newer libusb.
+(I think it must be newer than libusb-1.0.0-a3) 
+I downloaded the latest libusb-1.0.9
+and installed with a simple:
+./configure
+make
+sudo make install
+
+Now NXT-Python is working. 
